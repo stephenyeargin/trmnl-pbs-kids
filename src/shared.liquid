@@ -4,10 +4,10 @@
 {% assign show_title = show.first.title %}
 
 {% template error_or_empty %}
-{% if errorType and errorMessage %}
+{% if IDX_0.errorType and IDX_0.errorMessage %}
   <div>
-    <div class="title">{{ errorType }}</div>
-    <div class="description clamp--none">{{ errorMessage }}</div>
+    <div class="title">{{ IDX_0.errorType }}</div>
+    <div class="description clamp--none">{{ IDX_0.errorMessage }}</div>
   </div>
 {% endif %}
 {% if items.size == 0 %}

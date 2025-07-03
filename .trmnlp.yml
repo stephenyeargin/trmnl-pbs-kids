@@ -8,7 +8,7 @@ watch:
 
 # values of custom fields (defined in src/settings.yml)
 custom_fields: {
-  pbs_kids_show_id: pbs-kids-rocks
+  pbs_kids_show_id: sesame-street
 }
 
 # override variables

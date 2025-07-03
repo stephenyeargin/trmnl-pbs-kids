@@ -1,6 +1,6 @@
 <div class="view">
   <div class="layout layout--row">
-    {% render "error_or_empty" with errorType: errorType, errorMessage: errorMessage, items: items %}
+    {% render "error_or_empty" with IDX_0: IDX_0, items: items %}
     <div class="column"
      data-list-limit="true"
      data-list-max-height="420"
@@ -12,7 +12,9 @@
         <div class="meta"></div>
         <div class="content">
           <img src="{{ item.images.kids-mezzannine-16x9.url }}" class="image image-dither w--[200px] mb--1" />
-          <div class="label label--small">{{ item.encored_on | date: '%-m/%-d' }}: {{ item.series_title }}</div>
+          <div class="label label--small">
+            {{ item.premiered_on | date: '%-m/%-d/%Y' }}
+          </div>
           <div class="title title--small">{{ item.title }}</div>
           <div class="description clamp--2">{{ item.description }}</div>
         </div>
