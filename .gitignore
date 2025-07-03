@@ -1,2 +1,5 @@
 .env
 _build/*
+
+# Not needed in repository
+settings.yml.backup.*

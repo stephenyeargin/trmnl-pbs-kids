@@ -1,0 +1,120 @@
+#!/usr/bin/env ruby
+
+require 'json'
+require 'net/http'
+require 'uri'
+require 'yaml'
+require 'fileutils'
+
+# Configuration
+API_URL = 'https://producerplayer.services.pbskids.org/show-tracking'
+SETTINGS_FILE = File.join(File.dirname(__FILE__), '..', 'src', 'settings.yml')
+
+def fetch_show_data
+  puts "Fetching show data from PBS Kids API..."
+  
+  uri = URI(API_URL)
+  response = Net::HTTP.get_response(uri)
+  
+  unless response.is_a?(Net::HTTPSuccess)
+    puts "Error: Failed to fetch data from API. Status: #{response.code}"
+    exit 1
+  end
+  
+  JSON.parse(response.body)
+rescue JSON::ParserError => e
+  puts "Error: Failed to parse JSON response - #{e.message}"
+  exit 1
+rescue StandardError => e
+  puts "Error: Failed to fetch data - #{e.message}"
+  exit 1
+end
+
+def load_settings
+  puts "Loading current settings..."
+  
+  unless File.exist?(SETTINGS_FILE)
+    puts "Error: Settings file not found at #{SETTINGS_FILE}"
+    exit 1
+  end
+  
+  YAML.load_file(SETTINGS_FILE)
+rescue StandardError => e
+  puts "Error: Failed to load settings file - #{e.message}"
+  exit 1
+end
+
+def format_show_options(shows)
+  puts "Formatting show options..."
+  
+  # Sort shows alphabetically by title
+  sorted_shows = shows.sort_by { |show| show['title'] }
+  
+  # Format as YAML array of hash entries
+  sorted_shows.map do |show|
+    { show['title'] => show['slug'] }
+  end
+end
+
+def update_settings(settings, new_options)
+  puts "Updating settings with new show options..."
+  
+  # Find the PBS Kids show field
+  pbs_kids_field = settings['custom_fields'].find { |field| field['keyname'] == 'pbs_kids_show_id' }
+  
+  unless pbs_kids_field
+    puts "Error: Could not find pbs_kids_show_id field in settings"
+    exit 1
+  end
+  
+  # Update the options
+  pbs_kids_field['options'] = new_options
+  
+  settings
+end
+
+def save_settings(settings)
+  puts "Saving updated settings..."
+  
+  # Create a backup
+  backup_file = "#{SETTINGS_FILE}.backup.#{Time.now.strftime('%Y%m%d_%H%M%S')}"
+  FileUtils.cp(SETTINGS_FILE, backup_file)
+  puts "Backup created: #{backup_file}"
+  
+  # Save the updated settings
+  File.open(SETTINGS_FILE, 'w') do |file|
+    file.write(settings.to_yaml)
+  end
+  
+  puts "Settings updated successfully!"
+rescue StandardError => e
+  puts "Error: Failed to save settings - #{e.message}"
+  exit 1
+end
+
+def main
+  puts "PBS Kids Show Options Updater"
+  puts "=============================="
+  
+  # Fetch latest show data
+  shows = fetch_show_data
+  puts "Found #{shows.length} shows"
+  
+  # Load current settings
+  settings = load_settings
+  
+  # Format new options
+  new_options = format_show_options(shows)
+  
+  # Update settings
+  updated_settings = update_settings(settings, new_options)
+  
+  # Save updated settings
+  save_settings(updated_settings)
+  
+  puts "Update completed successfully!"
+  puts "Updated #{new_options.length} show options"
+end
+
+# Run the script
+main if __FILE__ == $0

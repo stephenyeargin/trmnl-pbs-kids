@@ -8,7 +8,7 @@ polling_url: |
   https://producerplayer.services.pbskids.org/show-list/?available=public&shows={{ pbs_kids_show_id }}&sort=-encored_on&type=full_length&page=1
   https://producerplayer.services.pbskids.org/show-tracking
 polling_headers: content-type=application/json
-polling_body: 
+polling_body:
 id: 110655
 custom_fields:
 - keyname: author_bio
@@ -27,9 +27,9 @@ custom_fields:
   - Alma's Way: almas-way
   - Arthur: arthur
   - Brambletown: brambletown
-  - Carl the Collector: carl-the-collector
   - 'CET Parents ': cet-parents
   - CET/ThinkTV Education: cetthinktv-education
+  - Carl the Collector: carl-the-collector
   - City Island: city-island
   - Clifford the Big Red Dog: clifford-big-red-dog
   - Clifford's Puppy Days: cliffords-puppy-days
@@ -42,12 +42,11 @@ custom_fields:
   - Donkey Hodie: donkey-hodie
   - Dot's Spot: dots-spot
   - Elinor Wonders Why: elinor-wonders-why
+  - FETCH! with Ruff Ruffman: fetch-with-ruff-ruffman
   - Family Math: family-math
   - Family Math en Español: family-math-en-espanol
-  - FETCH! with Ruff Ruffman: fetch-with-ruff-ruffman
   - Fizzy's Lunch Lab: fizzys-lunch-lab
   - Hero Elementary: hero-elementary
-  - 'iQ: smartparent': iq-smartparent
   - Jamming On the Job: jamming-on-the-job
   - Jelly, Ben & Pogo: jelly-ben-pogo
   - Keyshawn Solves It: keyshawn-solves-it
@@ -58,8 +57,8 @@ custom_fields:
   - Martha Speaks: martha-speaks
   - Maya & Miguel: maya-miguel
   - Mecha Builders: mecha-builders
-  - Mega Wow: mega-wow
   - Meet the Helpers: meet-helpers
+  - Mega Wow: mega-wow
   - Milo: milo
   - Mister Rogers' Neighborhood: mister-rogers
   - Molly of Denali: molly-of-denali
@@ -68,14 +67,15 @@ custom_fields:
   - Odd Squad: odd-squad
   - OddTube: odd-tube
   - Oh Noah!: oh-noah
-  - Parent Hacks: parent-hacks
-  - Parentalogic: parentalogic
-  - Parenting Minutes: parenting-minutes
   - PBS KIDS: pbs-kids
   - PBS KIDS Rocks!: pbs-kids-rocks
   - PBS KIDS Talk About: pbs-kids-talk-about
   - 'PBS KIDS: Activity Challenge': pbs-kids-activity-challenge
   - 'PBS KIDS: Get Moving': pbs-kids-get-moving
+  - PBS Western Reserve Educational Productions: western-reserve-public-media-educational-productions
+  - Parent Hacks: parent-hacks
+  - Parentalogic: parentalogic
+  - Parenting Minutes: parenting-minutes
   - Peg + Cat: peg
   - Phoebe & Jay: phoebe-jay
   - Pinkalicious & Peterrific: pinkalicious-and-peterrific
@@ -83,14 +83,14 @@ custom_fields:
   - Ready Jet Go: ready-jet-go
   - Rocket Saves the Day: rocket-saves-the-day
   - Rosie's Rules: rosies-rules
-  - Scribbles and Ink: scribbles-and-ink
+  - SUPER WHY!: super-why
   - SciGirls: scigirls
+  - Scribbles and Ink: scribbles-and-ink
   - Search It Up!: search-it-up
   - Sesame Street: sesame-street
   - Sid the Science Kid: sid-science-kid
   - Skillsville: skillsville
   - Splash and Bubbles: splash-and-bubbles
-  - SUPER WHY!: super-why
   - Super Why's Comic Book Adventures: super-whys-comic-book-adventures
   - The Cat in the Hat: cat-in-the-hat
   - The Not-Too-Late Show with Elmo: not-too-late-show-elmo
@@ -98,6 +98,7 @@ custom_fields:
   - Through the Woods: through-woods
   - Tiny Time Travel: tiny-time-travel
   - Together We Can: together-we-can
+  - WOSU Specials: wosu-specials
   - Weather Hunters: weather-hunters
   - What Can You Become?: what-can-you-become
   - What's Good?: whats-good
@@ -106,8 +107,8 @@ custom_fields:
   - Word of the Week: word-of-the-week
   - WordGirl: wordgirl
   - Work It Out Wombats!: work-it-out-wombats
-  - WOSU Specials: wosu-specials
   - Xavier Riddle and the Secret Museum: xavier-riddle-and-secret-museum
   - You, Me, Community: you-me-community
+  - 'iQ: smartparent': iq-smartparent
 name: PBS Kids
 refresh_interval: 1440
