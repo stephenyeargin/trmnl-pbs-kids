@@ -1,1 +1,18 @@
+{% assign items = IDX_0.items %}
+{% assign show_id = trmnl.plugin_settings.custom_fields_values.pbs_kids_show_id %}
+{% assign show = IDX_1.data | where: 'slug', show_id %}
+{% assign show_title = show.first.title %}
 
+{% template error_or_empty %}
+{% if errorType and errorMessage %}
+  <div>
+    <div class="title">{{ errorType }}</div>
+    <div class="description clamp--none">{{ errorMessage }}</div>
+  </div>
+{% endif %}
+{% if items.size == 0 %}
+  <div>
+    <div class="title">No episodes available.</div>
+  </div>
+{% endif %}
+{% endtemplate %}
