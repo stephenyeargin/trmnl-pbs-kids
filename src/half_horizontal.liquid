@@ -1,33 +1,31 @@
-<div class="view">
-  <div class="layout layout--row">
-    {% render "error_or_empty" with IDX_0: IDX_0, items: items %}
-    <div class="column"
-     data-list-limit="true"
-     data-list-max-height="210"
-     data-list-hidden-count="false"
-     data-list-max-columns="4"
-    >
-      {% for item in items %}
-      <div class="item">
-        <div class="meta"></div>
-        <div class="content">
-          <img src="{{ item.images.kids-mezzannine-16x9.url }}" class="image image-dither w--[200px] mb--1" />
-          <div class="label label--small">
-            {{ item.premiered_on | date: '%-m/%-d/%Y' }}
-          </div>
-          <div class="label label--small label--underline">{{ item.title }}</div>
-          <div class="description clamp--1">{{ item.description }}</div>
+<div class="layout layout--row">
+  {% render "error_or_empty" with IDX_0: IDX_0, items: items %}
+  <div class="column"
+    data-list-limit="true"
+    data-list-max-height="210"
+    data-list-hidden-count="false"
+    data-list-max-columns="4"
+  >
+    {% for item in items %}
+    <div class="item">
+      <div class="meta"></div>
+      <div class="content">
+        <img src="{{ item.images.kids-mezzannine-16x9.url }}" class="image image-dither w--[200px] mb--1" />
+        <div class="label label--small">
+          {{ item.premiered_on | date: '%-m/%-d/%Y' }}
         </div>
+        <div class="label label--small label--underline">{{ item.title }}</div>
+        <div class="description clamp--1">{{ item.description }}</div>
       </div>
-      {% endfor %}
     </div>
+    {% endfor %}
   </div>
-
-  {% if items.size <= 4 %}
-  <div class="title_bar">
-    <img class="image" src="https://upload.wikimedia.org/wikipedia/commons/e/e3/PBS_Kids_logo_%282022%29.svg" />
-    <span class="title">{{ show_title }}</span>
-    <span class="instance">{{ trmnl.plugin_settings.instance_name }}</span>
-  </div>
-  {% endif %}
 </div>
+
+{% if items.size <= 4 %}
+<div class="title_bar">
+  <img class="image" src="https://upload.wikimedia.org/wikipedia/commons/e/e3/PBS_Kids_logo_%282022%29.svg" />
+  <span class="title">{{ show_title }}</span>
+  <span class="instance">{{ trmnl.plugin_settings.instance_name }}</span>
+</div>
+{% endif %}
