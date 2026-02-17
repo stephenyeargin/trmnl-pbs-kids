@@ -1,24 +1,25 @@
 <div class="layout layout--row">
   {% render "error_or_empty" with IDX_0: IDX_0, items: items %}
-  <div class="column"
-    data-list-limit="true"
-    data-list-max-height="210"
-    data-list-hidden-count="false"
-    data-list-max-columns="2"
+  <div class="columns"
+    data-overflow-max-height="210"
+    data-overflow-max-cols="2"
+    data-overflow-counter="false"
   >
-    {% for item in items %}
-    <div class="item">
-      <div class="meta"></div>
-      <div class="content">
-        <img src="{{ item.images.kids-mezzannine-16x9.url }}" class="image image-dither w--[200px] mb--1" />
-        <div class="label label--small">
-          {{ item.premiered_on | date: '%-m/%-d/%Y' }}
+    <div class="column">
+      {% for item in items %}
+      <div class="item">
+        <div class="meta"></div>
+        <div class="content">
+          <img src="{{ item.images.kids-mezzannine-16x9.url }}" class="image image-dither w--full mb--1" />
+          <div class="label label--small">
+            {{ item.premiered_on | date: '%-m/%-d/%Y' }}
+          </div>
+          <div class="label label--small label--underline" data-clamp="1">{{ item.title }}</div>
+          <div class="description" data-clamp="1">{{ item.description }}</div>
         </div>
-        <div class="label label--small label--underline">{{ item.title }}</div>
-        <div class="description clamp--1">{{ item.description }}</div>
       </div>
+      {% endfor %}
     </div>
-    {% endfor %}
   </div>
 </div>
 
