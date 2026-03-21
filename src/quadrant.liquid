@@ -14,8 +14,8 @@
           <div class="label label--small">
             {{ item.premiered_on | date: '%-m/%-d/%Y' }}
           </div>
-          <div class="label label--small label--underline" data-clamp="1">{{ item.title }}</div>
-          <div class="description" data-clamp="1">{{ item.description }}</div>
+          <div class="label label--small lg:label--base label--underline" data-clamp="1" data-clamp-lg="2">{{ item.title }}</div>
+          <div class="description" data-clamp="1" data-clamp-lg="4">{{ item.description }}</div>
         </div>
       </div>
       {% endfor %}
@@ -23,10 +23,8 @@
   </div>
 </div>
 
-{% if items.size <= 4 %}
 <div class="title_bar">
   <img class="image" src="https://upload.wikimedia.org/wikipedia/commons/e/e3/PBS_Kids_logo_%282022%29.svg" />
   <span class="title">{{ show_title }}</span>
   <span class="instance">{{ trmnl.plugin_settings.instance_name }}</span>
 </div>
-{% endif %}

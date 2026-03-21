@@ -3,19 +3,20 @@
   <div class="columns"
     data-overflow-max-height="420"
     data-overflow-max-cols="4"
+    data-overflow-max-cols-lg="4"
     data-overflow-counter="false"
   >
     <div class="column">
       {% for item in items %}
-      <div class="item">
+      <div class="item lg:mb--5">
         <div class="meta"></div>
         <div class="content">
           <img src="{{ item.images.kids-mezzannine-16x9.url }}" class="image image-dither w--full mb--1" />
-          <div class="label label--small">
+          <div class="label label--small lg:label--base">
             {{ item.premiered_on | date: '%-m/%-d/%Y' }}
           </div>
-          <div class="title title--small" data-clamp="1">{{ item.title }}</div>
-          <div class="description" data-clamp="2">{{ item.description }}</div>
+          <div class="title title--small lg:title--base" data-clamp="1" data-clamp-lg="2">{{ item.title }}</div>
+          <div class="description" data-clamp="2" data-clamp-lg="4">{{ item.description }}</div>
         </div>
       </div>
       {% endfor %}

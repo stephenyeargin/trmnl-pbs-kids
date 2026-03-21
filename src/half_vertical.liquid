@@ -3,6 +3,7 @@
   <div class="columns"
     data-overflow-max-height="420"
     data-overflow-max-cols="2"
+    data-overflow-max-cols-lg="2"
     data-overflow-counter="false"
   >
     <div class="column">
@@ -11,11 +12,11 @@
         <div class="meta"></div>
         <div class="content">
           <img src="{{ item.images.kids-mezzannine-16x9.url }}" class="image image-dither w--full mb--1" />
-          <div class="label label--small">
+          <div class="label label--small lg:label--base">
             {{ item.premiered_on | date: '%-m/%-d/%Y' }}
           </div>
-          <div class="label label--small label--underline" data-clamp="1">{{ item.title }}</div>
-          <div class="description" data-clamp="1">{{ item.description }}</div>
+          <div class="label label--small lg:label--base label--underline" data-clamp="1" data-clamp-lg="2">{{ item.title }}</div>
+          <div class="description" data-clamp="2" data-clamp-lg="2">{{ item.description }}</div>
         </div>
       </div>
       {% endfor %}
