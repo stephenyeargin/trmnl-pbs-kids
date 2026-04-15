@@ -16,6 +16,7 @@ custom_fields:
 - keyname: author_bio
   name: About This Plugin
   field_type: author_bio
+  category: entertainment
   description: Show the latest videos available on the PBS Kids app and website.
   github_url: https://github.com/stephenyeargin/trmnl-pbs-kids
   learn_more_url: https://pbskids.org/
