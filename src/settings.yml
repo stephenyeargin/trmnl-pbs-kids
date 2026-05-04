@@ -4,7 +4,7 @@ no_screen_padding: 'no'
 dark_mode: 'no'
 static_data: ''
 polling_verb: get
-framework_version: 2.3.7
+framework_version: latest
 serverless_language:
 polling_url: |
   https://producerplayer.services.pbskids.org/show-list/?available=public&shows={{ pbs_kids_show_id }}&sort=-encored_on&type=full_length&page=1
@@ -70,6 +70,7 @@ custom_fields:
   - OddTube: odd-tube
   - Oh Noah!: oh-noah
   - PBS KIDS: pbs-kids
+  - PBS KIDS Read: pbs-kids-read
   - PBS KIDS Rocks!: pbs-kids-rocks
   - PBS KIDS Talk About: pbs-kids-talk-about
   - 'PBS KIDS: Activity Challenge': pbs-kids-activity-challenge
