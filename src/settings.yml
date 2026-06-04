@@ -5,12 +5,12 @@ dark_mode: 'no'
 static_data: ''
 polling_verb: get
 framework_version: latest
-serverless_language:
+serverless_language: node
 polling_url: |
   https://producerplayer.services.pbskids.org/show-list/?available=public&shows={{ pbs_kids_show_id }}&sort=-encored_on&type=full_length&page=1
   https://producerplayer.services.pbskids.org/show-tracking
 polling_headers: content-type=application/json
-polling_body:
+polling_body: 
 id: 110655
 custom_fields:
 - keyname: author_bio
