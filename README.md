@@ -1,6 +1,6 @@
 # PBS Kids for TRMNL
 
-[![Build and Deploy](https://github.com/stephenyeargin/trmnl-pbs-kids/actions/workflows/build.yml/badge.svg)](https://github.com/stephenyeargin/trmnl-pbs-kids/actions/workflows/build.yml)
+[![Build and Deploy](https://github.com/stephenyeargin/trmnl-pbs-kids/actions/workflows/build.yml/badge.svg)](https://github.com/stephenyeargin/trmnl-pbs-kids/actions/workflows/build.yml) [![TRMNL Recipe Connections](https://trmnl-badges.gohk.xyz/badge/connections?recipe=110655)](https://trmnl.com/recipes/110655)
 
 ![promo](assets/promo.png)
 
