@@ -115,5 +115,5 @@ custom_fields:
   - You, Me, Community: you-me-community
   - 'iQ: smartparent': iq-smartparent
 name: PBS Kids
-description: Scheduled episodes for PBS Kids shows
+description: Newest episodes for a chosen show
 refresh_interval: 1440
